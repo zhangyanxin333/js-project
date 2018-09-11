@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="register">
+            <span>手机号</span><input type="text" id="tel"> <br />
+            <span>密码</span><input type="password" id="password">   <br />
+            <span>验证码</span><input type="text" id="code">    <br />
+            <span>短信验证码</span><input type="text" id="message"> <br />
+            <span>注册邀请码</span><input type="text" id="reg"> <br />
+            <input type="checkbox" checked="checked" id="sel">
+            <label for="sel">我已同意该协议</label>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+var otel = document.getElementById("tel");
+var opassword = document.getElementById("password");
+var ocode = document.getElementById("code");
+var omessage = document.getElementById("message");
+var oreg = document.getElementById("reg");
+var osel = document.getElementById("sel");
+otel.onblur = function(){
+    var reg = /^\d{11}$/;
+    var telVal = otel.value;
+    if(!reg.test(telVal)){
+        this.style.borderColor = "red";
+    }
+    else{
+        this.style.borderColor = "#ddd";   
+    }
+}
+opassword.onblur = function(){
+    var reg = /^[a-zA-Z]\w{8,15}$/;
+    var passVal = this.value;
+    if(!reg.test(passVal)){
+        this.style.borderColor = "red";
+    }
+    else{
+        this.style.borderColor = "#ddd";   
+    }
+}
+</script>
